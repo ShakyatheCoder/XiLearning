@@ -7,6 +7,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+
+    .orbit-section {
+      margin: 140px 0;
+    }
+    
+    .orbit-section h2 {
+      margin-bottom: 60px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    
+    .orbit-container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+    }
+    
+    .center-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      background: #10c200;
+      color: #0f0f0f;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 22px;
+      box-shadow: 0 0 40px rgba(16, 194, 0, 0.5);
+    }
+    
+    /* Orbit rings */
+    .orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate linear infinite;
+    }
+    
+    /* Different orbit sizes + speeds */
+    .orbit1 { width: 200px; height: 200px; animation-duration: 12s; }
+    .orbit2 { width: 260px; height: 260px; animation-duration: 18s; }
+    .orbit3 { width: 320px; height: 320px; animation-duration: 24s; }
+    .orbit4 { width: 380px; height: 380px; animation-duration: 30s; }
+    .orbit5 { width: 440px; height: 440px; animation-duration: 36s; }
+    
+    /* Subject styling */
+    .subject {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #121212;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: 0.3s ease;
+    }
+    
+    .subject:hover {
+      background: #10c200;
+      color: #0f0f0f;
+      box-shadow: 0 0 20px rgba(16, 194, 0, 0.6);
+    }
+    
+    /* Rotation animation */
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -146,6 +226,34 @@
       <p>Xi's purpose? To set students on the right track to learn subjects as effective and efficient as possible. We believe that all students <strong>know</strong> the strategies, we are here to <strong>enlighten</strong> you.</p>
     </div>
   </div>
+
+  <div class="orbit-section">
+  <h2>Subjects We Train</h2>
+
+  <div class="orbit-container">
+    <div class="center-circle">Xi</div>
+
+    <div class="orbit orbit1">
+      <div class="subject">Mathematics</div>
+    </div>
+
+    <div class="orbit orbit2">
+      <div class="subject">Physics</div>
+    </div>
+
+    <div class="orbit orbit3">
+      <div class="subject">Chemistry</div>
+    </div>
+
+    <div class="orbit orbit4">
+      <div class="subject">Biology</div>
+    </div>
+
+    <div class="orbit orbit5">
+      <div class="subject">Computer Science</div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
